@@ -34,6 +34,10 @@ public class Curso {
     public void setNrc(int nrc) {
         this.nrc = nrc;
     }
-    
-    
+    //TODO modificar set estudiante y verificaciones del monitor
+    public void setEstudiante(Profesor profesor) {
+        if(this.profesor==null){
+        this.profesor = profesor;
+        }
+    }
 }

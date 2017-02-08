@@ -39,11 +39,15 @@ public class Universidad {
         c.setProfesor(p);
     }
 
+    public void registrarEstudiante(Estudiante e, Curso c) {
+        e.cursos.add(c);
+       //TODO agregar estudiante y verificacion
+    }
+    
     public static void main(String[] args) {
         ArrayList<Universidad> us = new ArrayList<>();
     }
-    
-    public static void 
+    //Registro y relacion, seguridad, preguntas desde universidad
 //metodos: profesor: cuantos cursos
     //estudiantes: cuantos cursos
     //Curso cuantos: estudiantes
