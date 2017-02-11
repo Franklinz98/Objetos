@@ -34,19 +34,34 @@ public class Universidad {
         cursos.add(c);
     }
 
-    public void registrarProfesorCurso(Profesor p, Curso c) {
-        p.cursos.add(c);
-        c.setProfesor(p);
+    public boolean registrarProfesorCurso(Profesor p, Curso c) {
+        if (p.agregarCurso(c) && c.setProfesor(p) == true) {
+            p.agregarCurso(c);
+            c.setProfesor(p);
+            return true;
+        }
+        return false;
     }
 
-    public void registrarEstudiante(Estudiante e, Curso c) {
-        e.cursos.add(c);
-       //TODO agregar estudiante y verificacion
+    public boolean registrarEstudiante(Estudiante e, Curso c) {
+        if (e.agregarCurso(c) && c.agregarEstudiante(e) == true) {
+            e.agregarCurso(c);
+            c.agregarEstudiante(e);
+            return true;
+        }
+        return false;
+    }
+
+    public void Tamaños (Curso c, Estudiante e,Profesor p){
+        c.getCursosSize();
+        e.getCursosSize();
+        p.getCursosSize();
     }
     
     public static void main(String[] args) {
         ArrayList<Universidad> us = new ArrayList<>();
     }
+
     //Registro y relacion, seguridad, preguntas desde universidad
 //metodos: profesor: cuantos cursos
     //estudiantes: cuantos cursos

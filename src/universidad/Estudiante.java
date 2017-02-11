@@ -19,23 +19,22 @@ public class Estudiante {
 
     public Estudiante(int ide) {
         this.ide = ide;
-        cursos=new ArrayList();
+        cursos = new ArrayList();
     }
 
     public ArrayList<Curso> getCursos() {
         return cursos;
     }
 
-    public void setCursos(ArrayList<Curso> cursos) {
-        this.cursos = cursos;
-    }
-    
-    public boolean agregarCruso(Curso curso){
-        if (cursos.size()<6) {
+    public boolean agregarCurso(Curso curso){
+        if (cursos.size()<10) {
             cursos.add(curso);
             return true;
         }
         return false;
     }
-
+    
+        public int getCursosSize() {
+        return cursos.size();
+    }
 }

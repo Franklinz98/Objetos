@@ -5,26 +5,33 @@
  */
 package universidad;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author franklinz
  */
 public class Curso {
+
     private int nrc;
     private Profesor profesor;
+    ArrayList<Estudiante> tcurso;
 
     public Curso(int nrc) {
         this.nrc = nrc;
+        tcurso = new ArrayList<>();
     }
 
     public Profesor getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(Profesor profesor) {
-        if(this.profesor==null){
-        this.profesor = profesor;
+    public boolean setProfesor(Profesor profesor) {
+        if (this.profesor == null) {
+            this.profesor = profesor;
+            return true;
         }
+        return false;
     }
 
     public int getNrc() {
@@ -35,9 +42,15 @@ public class Curso {
         this.nrc = nrc;
     }
     //TODO modificar set estudiante y verificaciones del monitor
-    public void setEstudiante(Profesor profesor) {
-        if(this.profesor==null){
-        this.profesor = profesor;
+    public boolean agregarEstudiante(Estudiante estudiante){
+        if (tcurso.size()<40) {
+            tcurso.add(estudiante);
+            return true;
         }
+        return false;
+    }
+    
+        public int getCursosSize() {
+        return tcurso.size();
     }
 }

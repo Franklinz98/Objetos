@@ -20,11 +20,16 @@ public class Profesor {
         this.id=id;
         cursos = new ArrayList<>();
     }
-    public boolean agregarCruso(Curso curso){
+    public boolean agregarCurso(Curso curso){
         if (cursos.size()<10) {
             cursos.add(curso);
             return true;
         }
         return false;
     }
+
+    public int getCursosSize() {
+        return cursos.size();
+    }
+    
 }
